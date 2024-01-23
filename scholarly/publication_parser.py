@@ -82,11 +82,13 @@ class _SearchScholarIterator(object):
             row = self._rows[self._pos]
             self._pos += 1
             res = self.pub_parser.get_publication(row, self._pubtype)
+            print(res,"res")
             return res
         elif self._soup.find(class_='gs_ico gs_ico_nav_next'):
             url = self._soup.find(
                 class_='gs_ico gs_ico_nav_next').parent['href']
             self._url = url
+            print(url,"url") 
             self._load_url(url)
             return self.__next__()
         else:
