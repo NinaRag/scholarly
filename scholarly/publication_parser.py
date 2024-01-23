@@ -59,7 +59,7 @@ class _SearchScholarIterator(object):
         self._soup = self._nav._get_soup(url)
         self._pos = 0
         self._rows = self._soup.find_all('div', class_='gs_r gs_or gs_scl gs_fmar') + self._soup.find_all('div', class_='gsc_mpat_ttl')
-
+        print(self._rows)
     def _get_total_results(self):
         if self._soup.find("div", class_="gs_pda"):
             return None
