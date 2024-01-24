@@ -50,6 +50,7 @@ class _SearchScholarIterator(object):
         self._url = url
         self._pubtype = PublicationSource.PUBLICATION_SEARCH_SNIPPET if "/scholar?" in url else PublicationSource.JOURNAL_CITATION_LIST
         self._nav = nav
+        print(url,self._pubtype)
         self._load_url(url)
         self.total_results = self._get_total_results()
         self.pub_parser = PublicationParser(self._nav)
